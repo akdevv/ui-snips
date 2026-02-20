@@ -1,63 +1,60 @@
-# Framer Snippets
+# UI Snips
 
-Welcome to **Framer Snippets**! 🚀\
-A collection of reusable and creative **Framer Motion** components and snippets designed to simplify animations and interactions in your projects. Each snippet is organized into its own folder, making it easy to explore, copy, and customize.
-
----
-
-## 📋 Snippets List
-
-| Snippet Name                 | Description                                                              |
-| ---------------------------- | ------------------------------------------------------------------------ |
-| smooth-scroll-cards-parallax | A Lenis Scroll and Framer Motion-powered parallax animation for Next.js. |
+A collection of **UI experiments and code examples** — hero sections, animations, Framer snippets, and other cool interface designs. Each piece lives in its own folder so you can browse, copy, and remix easily.
 
 ---
 
-## 🚀 How to Use
+## What’s inside
 
-1. **Clone this repository:**
+- **Hero sections** — landing headers and intros
+- **Animations** — scroll, parallax, and motion-driven effects
+- **Framer / React** — components and snippets for Framer Motion and related stacks
+- **UI patterns** — cards, layouts, and reusable design blocks
 
-    ```bash
-    git clone https://github.com/akdevv/framer-snippets.git
-    ```
-
-2. **Navigate to a snippet folder:**
-
-    ```bash
-    cd framer-snippets/folder-name
-    ```
-
-3. **Install dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-4. **Start the development server:**
-
-    ```bash
-    npm start
-    ```
+Everything here is meant to be dropped into your own projects or used as reference.
 
 ---
 
-## 📚 Detailed Documentation
+## Snippets
 
-Each snippet includes its own **README.md** inside the folder, providing in-depth explanations, code breakdowns, and examples. Refer to these for specific implementation details.
-
----
-
-## 🌟 Contributions
-
-We welcome contributions! 🚀\
-Feel free to submit pull requests if you have new snippets, improvements, or fixes to share. Let's build a powerful resource together!
+| Snippet                                                        | Description                                           |
+| -------------------------------------------------------------- | ----------------------------------------------------- |
+| [hero-collection](./hero-collection)                           | Hero sections and landing headers                     |
+| [smooth-scroll-cards-parallax](./smooth-scroll-cards-parallax) | Lenis scroll + Framer Motion parallax cards (Next.js) |
 
 ---
 
-## 📄 License
+## How to use
 
-This project is licensed under the **MIT License**.
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/akdevv/ui-snips
+   cd ui-snips
+   ```
+
+2. **Open a snippet**
+
+   ```bash
+   cd <snippet-folder-name>
+   ```
+
+3. **Install and run**
+   ```bash
+   npm install
+   npm start
+   ```
+
+Each snippet has its own **README** with setup, code notes, and usage.
 
 ---
 
-Happy Animating! ✨
+## Contributing
+
+Contributions are welcome — new snippets, tweaks, or fixes. Open an issue or pull request to suggest changes.
+
+---
+
+## License
+
+[MIT](./LICENSE)
