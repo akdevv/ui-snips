@@ -3,7 +3,7 @@ function ValueProp() {
     <section className="mx-auto max-w-3xl px-6 py-24 text-center">
       {/* heading: yellow highlight block + underlined grey phrases */}
       <h2 className="text-[clamp(2rem,4.5vw,3rem)] leading-[1.2]">
-        <span className="inline-block rounded bg-yellow px-3 pb-1 text-on-light">
+        <span className="bg-yellow text-on-light inline-block rounded px-3 pb-1">
           Selling AI is easy
         </span>
         <br />
@@ -19,20 +19,19 @@ function ValueProp() {
       </h2>
 
       {/* sub */}
-      <p className="mt-9 text-xl font-light text-ink-muted">
+      <p className="text-ink-muted mt-9 text-xl font-light">
         Axon does more than find contact info…
       </p>
 
       {/* black pill */}
-      <div className="mt-5 inline-block rounded-lg border border-white/10 bg-[#161616] px-6 py-3 text-lg font-semibold text-ink-strong">
+      <div className="text-ink-strong mt-5 inline-block rounded-lg border border-white/10 bg-[#161616] px-6 py-3 text-lg font-semibold">
         It finds companies with real problems AI can solve.
       </div>
 
       {/* callout with hand-drawn arrow + sketch marks */}
       <div className="mt-14 flex justify-center">
-        <div className="relative max-w-xl rounded-xl bg-[#2a2614] px-8 py-5 text-[clamp(1.1rem,2.5vw,1.45rem)] font-semibold leading-snug text-yellow">
+        <div className="text-yellow relative max-w-xl rounded-xl bg-[#2a2614] px-8 py-5 text-[clamp(1.1rem,2.5vw,1.45rem)] leading-snug font-semibold">
           Find clients for automation, chatbots, RAG search, AI agents and more!
-
           {/* arrow pointing in from the left */}
           <svg
             width="52"
@@ -43,13 +42,12 @@ function ValueProp() {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="absolute right-full top-1/2 mr-5 hidden -translate-y-1/2 text-yellow lg:block"
+            className="text-yellow absolute top-1/2 right-full mr-5 hidden -translate-y-1/2 lg:block"
             aria-hidden
           >
             <path d="M2 12 H48" />
             <path d="M48 12 l-12 -7 M48 12 l-12 7" />
           </svg>
-
           {/* sketch marks, top-right */}
           <svg
             width="26"
@@ -59,7 +57,7 @@ function ValueProp() {
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
-            className="absolute -right-4 -top-4 text-yellow"
+            className="text-yellow absolute -top-4 -right-4"
             aria-hidden
           >
             <path d="M4 14 L12 6 M14 22 L22 14" />
@@ -67,7 +65,7 @@ function ValueProp() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default ValueProp
+export default ValueProp;

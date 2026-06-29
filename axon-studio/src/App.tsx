@@ -1,27 +1,16 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import ValueProp from './components/ValueProp'
-import Features from './components/Features'
-import Worldwide from './components/Worldwide'
-import AcademyCta from './components/AcademyCta'
-import Pricing from './components/Pricing'
-import Faq from './components/Faq'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "@/pages/HomePage";
+import LoginPage from "@/pages/LoginPage";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <ValueProp />
-      <Features />
-      <Worldwide />
-      <AcademyCta />
-      <Pricing />
-      <Faq />
-      <Footer />
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
