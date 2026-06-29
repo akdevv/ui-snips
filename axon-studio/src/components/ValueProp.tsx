@@ -23,8 +23,8 @@ function ValueProp() {
         Axon does more than find contact info…
       </p>
 
-      {/* black pill */}
-      <div className="text-ink-strong mt-5 inline-block rounded-lg border border-white/10 bg-[#161616] px-6 py-3 text-lg font-semibold">
+      {/* white pill */}
+      <div className="text-on-light mt-5 inline-block rounded-lg bg-white px-3 py-1 text-lg font-semibold shadow-sm">
         It finds companies with real problems AI can solve.
       </div>
 
@@ -32,35 +32,46 @@ function ValueProp() {
       <div className="mt-14 flex justify-center">
         <div className="text-yellow relative max-w-xl rounded-xl bg-[#2a2614] px-8 py-5 text-[clamp(1.1rem,2.5vw,1.45rem)] leading-snug font-semibold">
           Find clients for automation, chatbots, RAG search, AI agents and more!
-          {/* arrow pointing in from the left */}
+          {/* hand-drawn arrow */}
           <svg
-            width="52"
-            height="24"
-            viewBox="0 0 52 24"
+            width="48"
+            height="48"
+            viewBox="0 0 80 112"
             fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-yellow absolute top-1/2 right-full mr-5 hidden -translate-y-1/2 lg:block"
+            className="text-yellow absolute top-1/2 right-full mr-3 hidden -translate-y-1/2 -rotate-90 lg:block"
             aria-hidden
           >
-            <path d="M2 12 H48" />
-            <path d="M48 12 l-12 -7 M48 12 l-12 7" />
+            <g
+              fill="currentColor"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path
+                d="M50 10 C 59 40, 53 64, 43 88"
+                fill="none"
+                strokeWidth="9"
+              />
+              <path
+                d="M44 100 C 35 86, 25 75, 16 66 C 13 63, 16 59, 21 61 C 31 67, 39 73, 45 77 C 51 73, 59 67, 68 61 C 72 59, 75 64, 71 67 C 61 77, 51 89, 44 100 Z"
+                strokeWidth="3"
+              />
+            </g>
           </svg>
-          {/* sketch marks, top-right */}
+          {/* hand-drawn emphasis marks, top-right */}
           <svg
-            width="26"
-            height="26"
-            viewBox="0 0 26 26"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.4"
             strokeLinecap="round"
-            className="text-yellow absolute -top-4 -right-4"
+            className="text-yellow absolute -top-5 -right-3 rotate-6"
             aria-hidden
           >
-            <path d="M4 14 L12 6 M14 22 L22 14" />
+            <path d="M4 15 C 7 11, 10 8, 14 6" />
+            <path d="M12 24 C 15 20, 18 17, 22 15" />
           </svg>
         </div>
       </div>

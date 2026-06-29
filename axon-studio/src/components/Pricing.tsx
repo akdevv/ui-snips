@@ -1,17 +1,26 @@
 import { useState } from "react";
+import eggIcon from "@/assets/plan-egg.svg";
+import chickIcon from "@/assets/plan-chick.svg";
+import duckIcon from "@/assets/plan-duck.svg";
 
 type Plan = {
   name: string;
-  icon: string;
+  icon: keyof typeof planIcons;
   monthly: number;
   popular?: boolean;
   features: { label: string; on: boolean; accent?: boolean }[];
 };
 
+const planIcons = {
+  egg: eggIcon,
+  chick: chickIcon,
+  goose: duckIcon,
+};
+
 const plans: Plan[] = [
   {
     name: "STARTER",
-    icon: "🥚",
+    icon: "egg",
     monthly: 29,
     features: [
       { label: "250 credits per month", on: true },
@@ -26,7 +35,7 @@ const plans: Plan[] = [
   },
   {
     name: "PRO",
-    icon: "🐤",
+    icon: "chick",
     monthly: 59,
     popular: true,
     features: [
@@ -42,7 +51,7 @@ const plans: Plan[] = [
   },
   {
     name: "ADVANCED",
-    icon: "🦢",
+    icon: "goose",
     monthly: 119,
     features: [
       { label: "1,000 credits per month", on: true },
@@ -97,8 +106,8 @@ function Pricing() {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-24 text-center">
-      <h2 className="text-[clamp(2rem,5vw,3rem)]">
-        <span className="bg-yellow text-on-light inline-block rounded px-3 pb-1">
+      <h2 className="mx-auto max-w-xl text-[clamp(2rem,5vw,3rem)]">
+        <span className="bg-yellow text-on-light inline-block -rotate-2 rounded px-3 pb-1">
           Select a plan
         </span>{" "}
         to start landing AI clients
@@ -112,15 +121,15 @@ function Pricing() {
       <div className="mt-8 inline-flex items-center gap-3 text-sm">
         <button
           onClick={() => setAnnual(false)}
-          className={`rounded-md px-4 py-2 font-semibold transition ${!annual ? "bg-card-alt text-ink-strong" : "text-ink-muted"}`}
+          className={`rounded-sm px-4 py-2 font-semibold transition ${!annual ? "bg-card text-ink-strong -rotate-2" : "text-ink-muted"}`}
         >
           Monthly
         </button>
         <button
           onClick={() => setAnnual(true)}
-          className={`px-1 font-semibold transition ${annual ? "text-ink-strong" : "text-ink-muted"}`}
+          className={`rounded-sm px-4 py-2 font-semibold transition ${annual ? "bg-card text-ink-strong -rotate-2" : "text-ink-muted"}`}
         >
-          Annual{" "}
+          Annual
           <span className="text-green-soft block text-xs font-medium">
             save 40%
           </span>
@@ -128,28 +137,45 @@ function Pricing() {
       </div>
 
       {/* cards */}
-      <div className="mt-12 grid items-start gap-6 md:grid-cols-3">
-        {plans.map((p) => (
+      <div className="mx-auto mt-12 grid max-w-4xl items-stretch gap-6 md:grid-cols-3 md:gap-0">
+        {plans.map((p, i) => (
           <div
             key={p.name}
-            className={`bg-card relative rounded-2xl p-7 text-left ${p.popular ? "ring-yellow ring-2" : "ring-1 ring-white/5"}`}
+            className={`bg-card relative flex flex-col rounded-md px-7 pt-10 pb-7 text-left ${
+              p.popular
+                ? "ring-yellow z-10 ring-2 md:-mx-6 md:shadow-2xl"
+                : "z-0 ring-1 ring-white/5 md:origin-bottom md:scale-[0.94]"
+            } ${i === 0 ? "md:-rotate-2 md:pr-12" : ""} ${i === 2 ? "md:rotate-2 md:pl-12" : ""}`}
           >
             {p.popular && (
-              <span className="bg-yellow text-on-light absolute -top-3 left-1/2 -translate-x-1/2 rounded-md px-3 py-1 text-xs font-extrabold">
+              <span className="bg-yellow text-on-light absolute -top-3 right-6 rotate-3 rounded-xs px-4 py-1.5 text-xs font-extrabold">
                 🔥 POPULAR
               </span>
             )}
-            <div className="text-3xl">{p.icon}</div>
+            <img src={planIcons[p.icon]} alt="" width={46} height={46} />
             <p className="text-ink-muted mt-3 text-sm font-bold tracking-[0.15em]">
               {p.name}
+              {annual ? " (ANNUAL)" : ""}
             </p>
-            <p className="mt-2">
-              <span className="text-ink-strong text-4xl font-extrabold">
+            <p className="mt-2 flex items-baseline gap-2">
+              {annual && (
+                <span className="text-ink-muted/50 text-2xl font-extrabold line-through">
+                  ${p.monthly}
+                </span>
+              )}
+              <span
+                className={`text-4xl font-extrabold ${annual ? "text-green-soft" : "text-ink-strong"}`}
+              >
                 ${price(p.monthly)}
               </span>
               <span className="text-ink-muted">/mo</span>
             </p>
-            <ul className="mt-6 space-y-3 text-sm">
+            {annual && (
+              <p className="text-ink-strong mt-2 text-sm font-bold">
+                Billed Annually at ${price(p.monthly) * 12}
+              </p>
+            )}
+            <ul className="mt-6 flex-1 space-y-3 text-sm">
               {p.features.map((f) => (
                 <li key={f.label} className="flex items-center gap-2.5">
                   <Check on={f.on} />
@@ -167,7 +193,7 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <button className="bg-yellow text-on-light mt-7 w-full rounded-[2px] py-3 font-bold transition-transform duration-150 ease-out hover:brightness-95 active:scale-[0.97]">
+            <button className="bg-yellow mt-8 w-full cursor-pointer rounded-xs py-4 text-base font-bold transition-transform duration-150 ease-out hover:brightness-95 active:scale-[0.97]">
               Select Plan
             </button>
           </div>

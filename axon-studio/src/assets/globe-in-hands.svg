@@ -1,0 +1,33 @@
+<svg width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- hand-drawn globe cradled in two hands -->
+  <defs>
+    <path id="hand" d="M86 94 C 91 86 91 77 88 72 Q 85 66 82 68 Q 80 69 80 73 Q 78 63 74 64 Q 71 65 72 72 Q 69 61 65 62 Q 62 63 64 71 Q 60 62 57 65 C 55 67 56 74 58 80 L 61 95 Q 74 100 86 94 Z" />
+    <clipPath id="globe-clip"><circle cx="60" cy="44" r="30" /></clipPath>
+  </defs>
+
+  <!-- white halo behind the globe -->
+  <circle cx="60" cy="44" r="30" fill="#fff" stroke="#fff" stroke-width="9" />
+
+  <!-- globe -->
+  <circle cx="60" cy="44" r="30" fill="#11b7b9" stroke="#111" stroke-width="3" />
+  <g clip-path="url(#globe-clip)" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round">
+    <line x1="60" y1="13" x2="60" y2="75" />
+    <ellipse cx="60" cy="44" rx="18" ry="30" />
+    <line x1="40" y1="22" x2="80" y2="22" />
+    <line x1="33" y1="32" x2="87" y2="32" />
+    <line x1="30" y1="44" x2="90" y2="44" />
+    <line x1="33" y1="56" x2="87" y2="56" />
+  </g>
+
+  <!-- white halo behind the hands -->
+  <g fill="#fff" stroke="#fff" stroke-width="9" stroke-linejoin="round">
+    <use href="#hand" />
+    <use href="#hand" transform="translate(120,0) scale(-1,1)" />
+  </g>
+
+  <!-- hands -->
+  <g fill="#f9d57a" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+    <use href="#hand" />
+    <use href="#hand" transform="translate(120,0) scale(-1,1)" />
+  </g>
+</svg>

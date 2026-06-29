@@ -1,9 +1,17 @@
+import gradCap from "@/assets/grad-cap.svg";
+
 function AcademyCta() {
   return (
     <section className="mx-auto max-w-2xl px-6 py-24 text-center">
-      <div className="text-5xl">🎓</div>
-      <h2 className="mt-6 text-[clamp(2rem,5vw,3rem)]">
-        <span className="bg-red text-ink-strong inline-block rounded px-3 pb-1">
+      <img
+        src={gradCap}
+        alt="Graduation cap"
+        width={130}
+        height={130}
+        className="mx-auto transition-transform duration-300 ease-out hover:scale-105 hover:rotate-3"
+      />
+      <h2 className="mt-4 text-[clamp(2rem,5vw,3rem)]">
+        <span className="bg-red text-ink-strong inline-block -rotate-2 rounded px-3 pb-1">
           Not sure
         </span>{" "}
         how to sell AI?

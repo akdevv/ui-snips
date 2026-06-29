@@ -31,10 +31,10 @@ function Faq() {
         {items.map((it, i) => {
           const isOpen = open === i;
           return (
-            <div key={it.q} className="bg-card rounded-xl">
+            <div key={it.q} className="bg-card rounded-md">
               <button
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-6 text-left"
               >
                 <span className="text-ink-strong text-lg font-bold">
                   {it.q}
@@ -56,7 +56,6 @@ function Faq() {
                   />
                 </svg>
               </button>
-              {/* smooth height expand via grid-rows */}
               <div
                 className={`grid transition-all duration-200 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
               >

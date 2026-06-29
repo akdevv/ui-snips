@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.svg";
 
-function LoginPage() {
+function RegisterPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-6">
+    <main className="flex min-h-screen items-center justify-center px-6 py-12">
       <div className="rise w-full max-w-md">
         {/* logo centered above the card */}
         <Link
@@ -18,16 +18,32 @@ function LoginPage() {
 
         <div className="bg-card rounded-md p-8 ring-1 ring-white/5">
           <h1 className="text-ink-strong text-center text-2xl">
-            Sign in to your{" "}
+            Create your{" "}
             <span className="decoration-yellow underline decoration-4 underline-offset-4">
               account
             </span>
           </h1>
           <p className="text-ink-muted mt-2 text-center text-sm">
-            Welcome back — let's find your next clients.
+            Start finding AI-ready clients in minutes.
           </p>
 
           <form className="mt-8 space-y-5">
+            <div>
+              <label
+                htmlFor="name"
+                className="text-ink-strong mb-2 block text-sm font-bold"
+              >
+                Full name
+              </label>
+              <input
+                id="name"
+                type="text"
+                autoComplete="name"
+                placeholder="Jane Doe"
+                className="bg-base text-ink placeholder:text-ink-muted/60 focus:ring-yellow w-full rounded-xs px-4 py-3 ring-1 ring-white/10 transition duration-150 ease-out outline-none focus:ring-2"
+              />
+            </div>
+
             <div>
               <label
                 htmlFor="email"
@@ -45,25 +61,17 @@ function LoginPage() {
             </div>
 
             <div>
-              <div className="mb-2 flex items-center justify-between">
-                <label
-                  htmlFor="password"
-                  className="text-ink-strong text-sm font-bold"
-                >
-                  Password
-                </label>
-                <a
-                  href="#"
-                  className="text-yellow text-sm font-semibold hover:underline"
-                >
-                  Forgot?
-                </a>
-              </div>
+              <label
+                htmlFor="password"
+                className="text-ink-strong mb-2 block text-sm font-bold"
+              >
+                Password
+              </label>
               <input
                 id="password"
                 type="password"
-                autoComplete="current-password"
-                placeholder="Your password"
+                autoComplete="new-password"
+                placeholder="At least 8 characters"
                 className="bg-base text-ink placeholder:text-ink-muted/60 focus:ring-yellow w-full rounded-xs px-4 py-3 ring-1 ring-white/10 transition duration-150 ease-out outline-none focus:ring-2"
               />
             </div>
@@ -72,18 +80,18 @@ function LoginPage() {
               type="submit"
               className="bg-yellow w-full transform-gpu cursor-pointer rounded-xs py-3.5 text-base font-bold transition-transform duration-200 ease-out hover:scale-[1.02] active:scale-[0.98]"
             >
-              Sign In
+              Create Account
             </button>
           </form>
         </div>
 
         <p className="text-ink-muted mt-6 text-center text-sm">
-          New to Axon Studio?{" "}
+          Already have an account?{" "}
           <Link
-            to="/register"
+            to="/login"
             className="text-yellow font-semibold hover:underline"
           >
-            Create an account
+            Sign in
           </Link>
         </p>
       </div>
@@ -91,4 +99,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default RegisterPage;

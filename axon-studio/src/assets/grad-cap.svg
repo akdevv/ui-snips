@@ -1,0 +1,28 @@
+<svg width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- hand-drawn graduation cap: red mortarboard, yellow tassel -->
+
+  <!-- white halo behind the tassel cord -->
+  <path d="M60 50 C 80 52 95 56 95 75" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" />
+
+  <!-- white halo behind the cap -->
+  <g fill="#fff" stroke="#fff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M44 54 L76 54 C 76 68 72 74 60 74 C 48 74 44 68 44 54 Z" />
+    <path d="M60 32 L100 50 L60 68 L20 50 Z" />
+    <circle cx="95" cy="77" r="4" />
+    <path d="M89 79 L101 79 L99 92 Q95 96 91 92 Z" />
+  </g>
+
+  <!-- cap base -->
+  <path d="M44 54 L76 54 C 76 68 72 74 60 74 C 48 74 44 68 44 54 Z" fill="#bf3f3e" stroke="#111" stroke-width="3" stroke-linejoin="round" />
+  <!-- mortarboard -->
+  <path d="M60 32 L100 50 L60 68 L20 50 Z" fill="#d34c4b" stroke="#111" stroke-width="3" stroke-linejoin="round" />
+  <!-- button -->
+  <circle cx="60" cy="50" r="3.4" fill="#f9d57a" stroke="#111" stroke-width="2" />
+
+  <!-- tassel cord -->
+  <path d="M60 50 C 80 52 95 56 95 75" fill="none" stroke="#f9d57a" stroke-width="3" stroke-linecap="round" />
+  <!-- tassel -->
+  <circle cx="95" cy="77" r="4" fill="#f9d57a" stroke="#111" stroke-width="2.5" />
+  <path d="M89 79 L101 79 L99 92 Q95 96 91 92 Z" fill="#f9d57a" stroke="#111" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M93 81 V90 M97 81 V89" stroke="#111" stroke-width="1.4" stroke-linecap="round" />
+</svg>

@@ -1,25 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@300;400;600;700;800;900&display=swap");
 @import "tailwindcss";
 
-/* Design tokens — extracted from uglysitescraper.com (inspiration), reskinned
-   for Axon Studio. ruddy/chaloops (Adobe Fonts) → Bricolage Grotesque (free). */
 @theme {
   /* surfaces */
-  --color-base: #212121; /* page bg */
-  --color-surface: #252525; /* section bg */
-  --color-card: #23222b; /* feature/pricing cards */
+  --color-base: #212121;
+  --color-surface: #252525;
+  --color-card: #272727;
   --color-card-alt: #2c2b36;
 
   /* accents */
-  --color-yellow: #f9d57a; /* CTA + highlight blocks */
-  --color-red: #d34c4b; /* red highlight box */
-  --color-red-soft: #ff7979; /* warn text / signal chips */
-  --color-teal: #11b7b9; /* highlight */
-  --color-green: #254230; /* gauge bg */
-  --color-green-soft: #3fae6b; /* "save 40%" / Great! */
+  --color-yellow: #f9d57a;
+  --color-red: #d34c4b;
+  --color-red-soft: #ff7979;
+  --color-teal: #11b7b9;
+  --color-green: #254230;
+  --color-green-soft: #3fae6b;
 
   /* text */
-  --color-ink: #f0f0f0; /* primary */
+  --color-ink: #f0f0f0;
   --color-ink-strong: #ffffff;
   --color-ink-muted: #b3b3b3;
   --color-on-light: #212121; /* text on yellow/white pills */
@@ -37,7 +35,6 @@
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
   }
-  /* display headings: heavy + tight tracking, mirrors ruddy 700 @ -3px */
   h1,
   h2 {
     font-weight: 800;

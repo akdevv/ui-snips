@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
-
-/* ---------- shared bits ---------- */
+import arrow from "@/assets/arrow.svg";
 
 function Gauge({
   label = "Great!",
@@ -91,23 +90,15 @@ const eyebrowIcons: Record<string, ReactNode> = {
   ),
 };
 
-function DownArrow() {
+function DownArrow({ flip = false }: { flip?: boolean }) {
   return (
-    <svg
-      width="40"
-      height="70"
-      viewBox="0 0 40 70"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="text-ink-muted mx-auto my-2"
+    <img
+      src={arrow}
+      alt=""
+      width={34}
+      className={`mx-auto my-2 hidden md:block ${flip ? "-scale-x-100" : ""}`}
       aria-hidden
-    >
-      <path d="M20 4 C 12 24, 28 40, 20 60" />
-      <path d="M20 60 l-7 -10 M20 60 l7 -10" />
-    </svg>
+    />
   );
 }
 
@@ -127,7 +118,11 @@ function Row({
   reverse?: boolean;
 }) {
   return (
-    <div className="grid items-center gap-8 rounded-3xl bg-white/[0.025] p-6 md:grid-cols-2 md:p-10">
+    <div
+      className={`grid items-center gap-8 text-left md:grid-cols-2 md:rounded-xl md:bg-white/2.5 md:px-10 md:py-14 ${
+        reverse ? "md:-rotate-1" : "md:rotate-1"
+      }`}
+    >
       <div className={reverse ? "md:order-2" : ""}>
         <p className="text-yellow mb-4 flex items-center gap-2 text-sm font-bold tracking-[0.18em] uppercase">
           <span className="text-yellow">{eyebrowIcons[icon]}</span>
@@ -161,7 +156,7 @@ function ResultsGridMock() {
     ["Lone Star Dental", "Good!", 58],
   ] as const;
   return (
-    <div className="rounded-xl bg-white p-4 text-left text-[#1a1a1a] shadow-2xl">
+    <div className="rounded-lg bg-white p-4 text-left text-[#1a1a1a] shadow-2xl">
       <p className="mb-3 text-sm font-bold">
         35 Prospects Found For:{" "}
         <span className="font-normal text-gray-500">
@@ -173,7 +168,7 @@ function ResultsGridMock() {
           <div key={name} className="rounded-lg border border-gray-200 p-2">
             <p className="mb-2 truncate text-xs font-semibold">{name}</p>
             <div className="flex items-center gap-2">
-              <div className="h-12 w-16 rounded bg-gradient-to-br from-slate-600 to-slate-900" />
+              <div className="h-12 w-16 rounded bg-linear-to-br from-slate-600 to-slate-900" />
               <Gauge label={score} fill={fill} />
             </div>
           </div>
@@ -185,7 +180,7 @@ function ResultsGridMock() {
 
 function ProspectDetailMock() {
   return (
-    <div className="rounded-xl bg-white p-5 text-left text-[#1a1a1a] shadow-2xl">
+    <div className="rounded-lg bg-white p-5 text-left text-[#1a1a1a] shadow-2xl">
       <div className="flex items-center justify-between border-b border-gray-100 pb-2">
         <p className="font-bold">Lumen Dental Studio</p>
         <span className="rounded border border-gray-200 px-2 py-0.5 text-xs text-gray-500">
@@ -193,7 +188,7 @@ function ProspectDetailMock() {
         </span>
       </div>
       <div className="mt-3 grid grid-cols-3 gap-3 text-[11px]">
-        <div className="h-20 rounded bg-gradient-to-br from-sky-700 to-slate-900" />
+        <div className="h-20 rounded bg-linear-to-br from-sky-700 to-slate-900" />
         <div className="flex flex-col items-center">
           <span className="mb-1 font-semibold">AI Readiness</span>
           <Gauge fill={85} />
@@ -229,7 +224,7 @@ function GeneratorMock() {
     </div>
   );
   return (
-    <div className="space-y-3 rounded-xl bg-white p-5 text-left text-[#1a1a1a] shadow-2xl">
+    <div className="space-y-3 rounded-lg bg-white p-5 text-left text-[#1a1a1a] shadow-2xl">
       {field("Prospect Email", "jordan@lumendental.com")}
       {field("Subject Line", "Quick idea for your booking flow?")}
       <p className="rounded border border-gray-200 px-3 py-2 text-sm leading-relaxed text-gray-600">
@@ -245,7 +240,7 @@ function GeneratorMock() {
 
 function RadarEmailMock() {
   return (
-    <div className="rounded-xl bg-white p-4 text-left text-[#1a1a1a] shadow-2xl">
+    <div className="rounded-lg bg-white p-4 text-left text-[#1a1a1a] shadow-2xl">
       <p className="text-sm font-semibold">
         32 New Prospects Found — Dental Clinics in Austin, TX
       </p>
@@ -278,11 +273,9 @@ function RadarEmailMock() {
   );
 }
 
-/* ---------- section ---------- */
-
 function Features() {
   return (
-    <section className="mx-auto max-w-6xl space-y-2 px-4 py-16 sm:px-6">
+    <section className="mx-auto max-w-6xl space-y-20 px-4 py-16 sm:px-6 md:space-y-2">
       <Row
         eyebrow="Targeted Research"
         icon="research"
@@ -315,7 +308,7 @@ function Features() {
         }
         mock={<ProspectDetailMock />}
       />
-      <DownArrow />
+      <DownArrow flip />
       <Row
         eyebrow="Pitch Generator"
         icon="pitch"
