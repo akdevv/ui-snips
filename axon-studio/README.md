@@ -1,32 +1,54 @@
-# React + TypeScript + Vite
+# Axon Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A landing-page build for **Axon** — a fictional AI agent that scans Google Maps and
+the web to find businesses _ready to adopt AI_, scores their AI-readiness, and helps
+agencies pitch the right companies first.
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="./public/screenshots/01-hero-cover.png" alt="Axon Studio — hero and product mockup" width="900">
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> Layout cloned 1:1 from [uglysitescraper.com](https://uglysitescraper.com) as a design
+> study. All copy is original; the company is fictional.
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **TypeScript**
+- **Vite 8** — dev server & build
+- **Tailwind CSS v4** (`@tailwindcss/vite`)
+- **React Router 7** — Home / Login / Register
+- **Hugeicons** · **Oxlint** · **Prettier**
 
-## Expanding the Oxlint configuration
+## Run
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+pnpm install
+pnpm dev        # http://localhost:5173
+pnpm build      # type-check + production build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Sections
+
+One component per section (`src/components/`).
+
+**Value proposition** — `ValueProp`
+![Value proposition](./public/screenshots/02-value-prop-framed.png)
+
+**Targeted research & AI analysis** — `Features`
+![Targeted research and AI analysis](./public/screenshots/03-features-research-analysis-framed.png)
+
+**Pitch generator & Opportunity Radar** — `Features`
+![Pitch generator and opportunity radar](./public/screenshots/04-features-pitch-radar-framed.png)
+
+**Worldwide coverage** — `Worldwide`
+![Worldwide coverage](./public/screenshots/05-worldwide-framed.png)
+
+**Pricing** — `Pricing`
+![Pricing](./public/screenshots/07-pricing-framed.png)
+
+**FAQ & footer** — `Faq` · `Footer`
+![FAQ and footer](./public/screenshots/08-faq-footer-framed.png)
+
+---
+
+Part of the [ui-snips](../README.md) collection.
