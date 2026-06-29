@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@300;400;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+/* Design tokens — extracted from uglysitescraper.com (inspiration), reskinned
+   for Axon Studio. ruddy/chaloops (Adobe Fonts) → Bricolage Grotesque (free). */
+@theme {
+  /* surfaces */
+  --color-base: #212121; /* page bg */
+  --color-surface: #252525; /* section bg */
+  --color-card: #23222b; /* feature/pricing cards */
+  --color-card-alt: #2c2b36;
+
+  /* accents */
+  --color-yellow: #f9d57a; /* CTA + highlight blocks */
+  --color-red: #d34c4b; /* red highlight box */
+  --color-red-soft: #ff7979; /* warn text / signal chips */
+  --color-teal: #11b7b9; /* highlight */
+  --color-green: #254230; /* gauge bg */
+  --color-green-soft: #3fae6b; /* "save 40%" / Great! */
+
+  /* text */
+  --color-ink: #f0f0f0; /* primary */
+  --color-ink-strong: #ffffff;
+  --color-ink-muted: #b3b3b3;
+  --color-on-light: #212121; /* text on yellow/white pills */
+
+  --font-display: "Grandstander", system-ui, sans-serif;
+
+  /* strong easing — built-in curves are too weak */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+  }
+  /* display headings: heavy + tight tracking, mirrors ruddy 700 @ -3px */
+  h1,
+  h2 {
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--color-ink-strong);
+  }
+}
+
+/* subtle hero entrance — staggered fade-up, first-paint only */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.rise {
+  animation: rise 600ms var(--ease-out) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
